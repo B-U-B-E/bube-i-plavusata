@@ -1,0 +1,42 @@
+@use "../core/mixins" as mix;
+@use "../core/variables" as var;
+
+
+.banner-section{
+    
+    background-image:url("./../img/img01.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100vh;
+    background-position-x: center;
+    
+    
+    width: 100%;
+
+    .header{
+        @extend %wrap;
+        position: relative;
+        height: 100%;
+
+        .header-section-inner{
+            position: absolute;
+            top:50%;
+            transform: translate(0%, -50%);
+            max-width: 45%;
+            @include mix.tablet{max-width: 100%;}
+
+            h3{
+                text-transform: uppercase;
+                color: $text-color-base;
+            }
+            
+             
+
+            
+        }
+
+        
+    }
+
+
+}

@@ -1,0 +1,66 @@
+@use "./../core/variables" as var;
+@use "./../core/mixins" as mix;
+@use 'sass:math';
+
+
+.boxes-wrapper{
+    background-color: var.$background-color-secondary;
+    
+
+    
+    .boxes-wrapper-inner{
+        @extend %section;
+
+        .boxes-wrapper-row{
+            display:flex;
+            @extend %wrap;
+            margin-right: - (var.$margin-aligner-right);
+
+            @include mix.mobile{flex-wrap: wrap; &:not(:last-child){
+                    margin-bottom: -(var.$gutter-base);
+                }}
+
+            
+
+
+            
+
+            .boxes-wrapper-card{
+                flex: 1 1 33.33%;
+                box-shadow: 0 0 20px -15px black;
+                border-radius: 1rem;
+
+                @include mix.mobile{flex:0 0 100%; &:not(:last-child){
+                    margin-bottom: var.$gutter-base;
+                }}
+                
+                &:not(:last-child){
+
+                    margin-right: var.$margin-aligner-right;
+                }
+                
+    
+                .boxes-wrapper-card-inner{
+                    
+                    @extend %wrap;
+                    padding-top: var.$gutter-base * 2;
+                    padding-bottom: var.$gutter-base * 2;
+
+                    @include mix.tablet{
+
+                        padding-top: math.div(var.$gutter-base, 2);
+                        padding-bottom: math.div(var.$gutter-base , 2);
+                    }
+
+
+                    i{
+                        color: var.$background-color-primary;
+                        font-size: var.$heading-size-bigger ;
+                        padding-bottom: var.$gutter-base;
+                    }
+                }
+            
+            }
+        }
+    }
+}

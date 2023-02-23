@@ -1,0 +1,40 @@
+@use "variables" as var;
+
+* { box-sizing: border-box; }
+
+body { margin: 0; }
+
+h1,
+h2,
+h3,
+p,
+ul { margin-top: 0; }
+
+
+h2{
+  text-transform: capitalize;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.btn{
+  text-decoration: none;
+  color: var.$text-color-secondary;
+  background-color: var.$background-color-primary;
+  padding: var.$font-size-small;
+  border-radius: var.$border-radius;
+  display: inline-block;
+  margin-top: var.$gutter-base;
+  &:hover{background: none; box-shadow: 0 0 0px 1px var.$background-color-primary; color: var.$background-color-primary;}
+  
+  
+}
+
+
+span{
+  font-weight: var.$font-weight-bold;
+  text-transform: capitalize;
+}

@@ -4,11 +4,16 @@
 
 .banner-section{
     
-    background-image:url("./../img/img01.jpg");
+    background-image:url("../img/img01.jpg");
     background-size: cover;
     background-attachment: fixed;
     height: 100vh;
     background-position-x: center;
+    
+    
+    @include mix.mobile-l-styles {
+    background-attachment: scroll;
+  }
     
     
     width: 100%;

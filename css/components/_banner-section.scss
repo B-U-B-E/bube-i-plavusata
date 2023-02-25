@@ -12,6 +12,14 @@
     display: flex;
     align-items: center;
 
+    @include mix.tablet {
+        background-position: 70%
+    }
+
+    @include mix.mobile {
+        background-attachment: scroll;
+    }
+
 
     .header {
         @extend %wrap;
@@ -36,7 +44,7 @@
 
 
 
-   
+
 
 
 }

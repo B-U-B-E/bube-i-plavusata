@@ -1,94 +1,121 @@
-@use "./../core/mixins" as mix;
-@use "./../core/variables" as var;
+@use "./../core/mixins"as mix;
+@use "./../core/variables"as var;
 @use "sass:math";
 
-.latest-news{
+.latest-news {
     background-color: var.$background-color-secondary;
 
-    .latest-news-inner{
-        @extend %wrap;
+    .latest-news-inner {
+        width: 100%;
+        padding-left: 1rem;
+        padding-right: 1rem;
         @extend %section;
 
 
-        
 
 
-        .latest-news-text{
+
+        .latest-news-text {
             margin-bottom: var.$gutter-base;
         }
 
-        p{
+        p {
             margin-bottom: 0;
         }
 
 
-        .news-cards-row{
+        .news-cards-row {
             display: flex;
-            margin-right:-(var.$margin-aligner-right);
+            margin-right: -(var.$margin-aligner-right);
 
-            @include mix.mobile{flex-wrap: wrap; &:not(:last-child){
+            @include mix.mobile {
+                flex-wrap: wrap;
+
+                &:not(:last-child) {
                     margin-bottom: -(var.$gutter-base);
-                }}
+                }
+            }
 
-            .news-card-33{
-                flex:0 0 33.33%;
+            .news-card-33 {
+                flex: 0 0 33.33%;
 
-                @include mix.mobile{
+                @include mix.mobile {
                     flex: 0 0 100%;
-                    &:not(:last-child){
-                    margin-bottom: var.$gutter-base;
-                }
-                
-                }
 
-                
-
-                .news-card-inner{
-                box-shadow: 0 0 30px -12px black;
-                
-                margin-right: var.$margin-aligner-right;
-                border-radius: var.$border-radius ;
-                
-                
-
-                .news-img img{
-                border-radius: var.$border-radius var.$border-radius 0 0;
-                
-
-            }
-            .news-img{
-                position: relative;
-
-                span.sticker{
-                    @include mix.sticker;
-                    @include mix.tablet{font-size: var.$font-size-small ;}
-
-                }
-                .pink{background-color: var.$background-color-primary};
-                .blue{background-color: var.$background-color-tertiary};
-                .bube{background-color: var.$background-color-quaternary};
-            }
-
-                .news-card-text{
-                    @extend %wrap;
-                    padding-top: math.div(var.$gutter-base , 2);
-                    padding-bottom: math.div(var.$gutter-base , 2);
-                   
-
-                    a.btn{
-                         @include mix.tablet{width: 100%;
-                        text-align: center;
-                        }
-                        
+                    &:not(:last-child) {
+                        margin-bottom: var.$gutter-base;
                     }
-                    
 
                 }
-                
-            }
+
+
+
+                .news-card-inner {
+                    box-shadow: 0 0 30px -12px black;
+
+                    margin-right: var.$margin-aligner-right;
+                    border-radius: var.$border-radius;
+
+
+
+                    .news-img img {
+                        border-radius: var.$border-radius var.$border-radius 0 0;
+
+
+                    }
+
+                    .news-img {
+                        position: relative;
+
+                        span.sticker {
+                            @include mix.sticker;
+
+                            @include mix.tablet {
+                                font-size: var.$font-size-small;
+                            }
+
+                        }
+
+                        .pink {
+                            background-color: var.$background-color-primary
+                        }
+
+                        ;
+
+                        .blue {
+                            background-color: var.$background-color-tertiary
+                        }
+
+                        ;
+
+                        .bube {
+                            background-color: var.$background-color-quaternary
+                        }
+
+                        ;
+                    }
+
+                    .news-card-text {
+                        @extend %wrap;
+                        padding-top: math.div(var.$gutter-base, 2);
+                        padding-bottom: math.div(var.$gutter-base, 2);
+
+
+                        a.btn {
+                            @include mix.tablet {
+                                width: 100%;
+                                text-align: center;
+                            }
+
+                        }
+
+
+                    }
+
+                }
             }
 
-            
+
         }
     }
 }

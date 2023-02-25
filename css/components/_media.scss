@@ -1,29 +1,38 @@
-@use "./../core/mixins" as mix;
-@use "./../core/variables" as var;
+@use "./../core/mixins"as mix;
+@use "./../core/variables"as var;
 @use "sass:math";
 
 
-.media{
+.media {
     @extend %section;
     @extend %wrap;
     display: flex;
-    @include mix.tablet{flex-wrap: wrap;}
-    
 
-    .media-50{
-        flex-basis: 50%;
-        @include mix.tablet{flex-basis: 100%;}
-        
-
-        // .media-img{
-        //     max-width:600px;
-        //     margin-left: auto;
-        //     margin-right: auto;
-        // }
-
-        .media-text-inner{
-           margin-right:50px;
-        }
+    @include mix.tablet {
+        flex-wrap: wrap;
     }
 
+
+    .media-50 {
+        flex-basis: 50%;
+
+        @include mix.tablet {
+            flex-basis: 100%;
+        }
+
+
+
+
+        .media-text-inner {
+            &:not(:last-child) {
+                padding-right: (var.$gutter-base * 1.5);
+
+                @include mix.tablet {
+                    padding-right: 0;
+                    margin-bottom: 30px;
+                }
+            }
+        }
+
+    }
 }

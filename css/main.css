@@ -298,8 +298,14 @@ span {
     flex-basis: 100%;
   }
 }
-.media .media-50 .media-text-inner {
-  margin-right: 50px;
+.media .media-50 .media-text-inner:not(:last-child) {
+  padding-right: 2.8125rem;
+}
+@media (max-width: 768px) {
+  .media .media-50 .media-text-inner:not(:last-child) {
+    padding-right: 0;
+    margin-bottom: 30px;
+  }
 }
 
 .boxes-wrapper .boxes-wrapper-inner, .media, .latest-news .latest-news-inner {

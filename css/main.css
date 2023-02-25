@@ -156,6 +156,16 @@ span {
   display: flex;
   align-items: center;
 }
+@media (max-width: 768px) {
+  .banner-section {
+    background-position: 70%;
+  }
+}
+@media (max-width: 425px) {
+  .banner-section {
+    background-attachment: scroll;
+  }
+}
 .banner-section .header .header-section-inner {
   max-width: 50%;
 }

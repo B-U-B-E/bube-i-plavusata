@@ -148,31 +148,21 @@ span {
   }
 }
 .banner-section {
-  background-image: url("./../img/img01.jpg");
+  background-image: url("../img/img01.jpg");
   background-size: cover;
   background-attachment: fixed;
   height: 100vh;
   background-position-x: center;
-  width: 100%;
-}
-.banner-section .header {
-  position: relative;
-  height: 100%;
+  display: flex;
+  align-items: center;
 }
 .banner-section .header .header-section-inner {
-  position: absolute;
-  top: 50%;
-  transform: translate(0%, -50%);
-  max-width: 45%;
+  max-width: 50%;
 }
 @media (max-width: 768px) {
   .banner-section .header .header-section-inner {
     max-width: 100%;
   }
-}
-.banner-section .header .header-section-inner h3 {
-  text-transform: uppercase;
-  color: #696969;
 }
 
 .latest-news .latest-news-inner, .media, .boxes-wrapper .boxes-wrapper-inner {
